@@ -87,10 +87,10 @@
   .product-card { background:rgba(255,255,255,0.07); border:1px solid rgba(232,164,184,0.18); border-radius:22px; overflow:hidden; cursor:pointer; transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275); backdrop-filter:blur(14px); position:relative; animation:cardIn 0.6s ease both; }
   .product-card:hover { transform:translateY(-8px) scale(1.02); border-color:rgba(232,164,184,0.5); box-shadow:0 24px 60px rgba(157,79,112,0.25); }
   .product-badge { position:absolute; top:12px; right:12px; background:linear-gradient(135deg,var(--rose),var(--mauve-mid)); color:#fff; font-size:0.66rem; font-weight:700; padding:4px 12px; border-radius:20px; z-index:2; }
-  .product-img-wrap { height:185px; position:relative; overflow:hidden; background:linear-gradient(135deg,rgba(196,160,200,0.18),rgba(232,164,184,0.12)); display:flex; align-items:center; justify-content:center; }
-  .product-emoji { font-size:4.8rem; filter:drop-shadow(0 8px 20px rgba(157,79,112,0.3)); transition:transform 0.45s cubic-bezier(0.175,0.885,0.32,1.275); z-index:1; position:relative; }
-  .product-card:hover .product-emoji { transform:scale(1.18) rotate(-6deg); }
-  .product-glow { position:absolute; width:110px; height:110px; background:radial-gradient(circle,rgba(196,160,200,0.28),transparent); border-radius:50%; animation:glowPulse 2.4s ease-in-out infinite; }
+  .product-img-wrap { height:300px; position:relative; overflow:hidden; background:linear-gradient(145deg,rgba(30,14,22,0.9),rgba(20,8,14,0.95)); }
+  .product-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform 0.55s cubic-bezier(0.175,0.885,0.32,1.275); display:block; }
+  .product-card:hover .product-img-wrap img { transform:scale(1.08); }
+  .product-img-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(12,4,8,0.55) 0%, transparent 45%); pointer-events:none; }
   .product-info { padding:14px 16px 16px; }
   .product-category { font-size:0.64rem; letter-spacing:5px; color:var(--rose); text-transform:uppercase; margin-bottom:4px; }
   .product-name { font-size:1rem; font-weight:700; margin-bottom:4px; color:#fff; line-height:1.3; }
@@ -168,18 +168,6 @@
   .form-input::placeholder { color:rgba(255,255,255,0.28); }
   .form-input:focus, .form-select:focus { border-color:var(--rose); background:rgba(232,164,184,0.08); box-shadow:0 0 0 3px rgba(232,164,184,0.12); }
   .form-select option { background:#2A1020; color:#fff; }
-  .payment-section { margin-top:14px; }
-  .payment-label { font-size:0.68rem; font-weight:700; color:var(--rose); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:10px; display:block; }
-  .payment-methods { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
-  .payment-card { border:1px solid rgba(232,164,184,0.2); border-radius:13px; padding:13px 9px; cursor:pointer; transition:all 0.3s; text-align:center; position:relative; overflow:hidden; background:rgba(255,255,255,0.04); }
-  .payment-card:hover { border-color:var(--rose); background:rgba(232,164,184,0.08); }
-  .payment-card.selected { border-color:var(--rose); background:rgba(232,164,184,0.14); }
-  .payment-card.selected::after { content:'✓'; position:absolute; top:7px; left:7px; background:var(--rose-deep); color:#fff; width:18px; height:18px; border-radius:50%; font-size:0.6rem; font-weight:700; display:flex; align-items:center; justify-content:center; }
-  .payment-icon { font-size:1.65rem; margin-bottom:5px; }
-  .payment-name { font-size:0.78rem; font-weight:700; color:#fff; }
-  .payment-desc { font-size:0.65rem; color:rgba(255,255,255,0.45); margin-top:2px; }
-  .visa-fields { margin-top:11px; display:grid; gap:10px; animation:fadeUp 0.3s ease; }
-  .visa-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .divider { border:none; border-top:1px solid rgba(232,164,184,0.12); margin:15px 0; }
   .order-summary { background:rgba(232,164,184,0.06); border:1px solid rgba(232,164,184,0.12); border-radius:13px; padding:13px; margin-bottom:15px; }
   .summary-row { display:flex; justify-content:space-between; font-size:0.86rem; padding:3px 0; color:rgba(255,255,255,0.6); }
@@ -227,7 +215,6 @@
   .cart-item-price { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--blush); }
   .cart-item-customer { font-size:0.72rem; color:rgba(255,255,255,0.4); line-height:1.5; }
   .cart-item-customer strong { color:rgba(232,164,184,0.8); font-weight:600; }
-  .cart-item-payment { display:inline-flex; align-items:center; gap:4px; font-size:0.68rem; background:rgba(196,160,200,0.1); border:1px solid rgba(196,160,200,0.2); color:rgba(196,160,200,0.8); padding:3px 10px; border-radius:20px; margin-top:5px; }
   .cart-item-date { font-size:0.62rem; color:rgba(255,255,255,0.25); margin-top:4px; }
   .cart-item-del { position:absolute; top:12px; left:12px; background:rgba(157,79,112,0.1); border:1px solid rgba(157,79,112,0.25); color:rgba(255,255,255,0.4); width:26px; height:26px; border-radius:50%; cursor:pointer; font-size:0.7rem; display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
   .cart-item-del:hover { background:var(--rose-dark); color:#fff; border-color:var(--rose-dark); transform:scale(1.1); }
@@ -272,6 +259,34 @@
   ::-webkit-scrollbar { width:4px; }
   ::-webkit-scrollbar-thumb { background:var(--rose-deep); border-radius:3px; }
 
+  /* ===== NEW CART / CHECKOUT STYLES ===== */
+  .checkout-cart-summary {
+    background:rgba(232,164,184,0.06);
+    border:1px solid rgba(232,164,184,0.14);
+    border-radius:14px;
+    padding:10px;
+    margin-bottom:15px;
+    max-height:190px;
+    overflow-y:auto;
+  }
+  .checkout-cart-item {
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:9px 5px; border-bottom:1px solid rgba(232,164,184,0.09);
+    font-size:.82rem;
+  }
+  .checkout-cart-item:last-child { border-bottom:0; }
+  .checkout-cart-item-name { flex:1; color:rgba(255,255,255,.85); }
+  .checkout-cart-item-qty { color:var(--rose); font-weight:700; white-space:nowrap; }
+  .checkout-cart-item-total { color:var(--blush); font-weight:700; white-space:nowrap; }
+  .remember-customer { display:flex; align-items:center; gap:8px; margin-top:12px; color:rgba(255,255,255,.55); font-size:.76rem; cursor:pointer; }
+  .remember-customer input { accent-color:var(--rose-deep); width:16px; height:16px; }
+  .cart-item-customer { display:none; }
+  .cart-item-order-id, .cart-item-date { display:none; }
+  .cart-item-controls { display:flex; align-items:center; gap:6px; margin-top:7px; }
+  .cart-qty-btn { width:27px; height:27px; border-radius:50%; border:1px solid rgba(232,164,184,.25); background:rgba(232,164,184,.08); color:#fff; cursor:pointer; }
+  .cart-qty { min-width:24px; text-align:center; color:var(--blush); font-weight:700; }
+  .cart-checkout-note { text-align:center; color:rgba(255,255,255,.38); font-size:.72rem; margin-top:8px; }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width:768px) {
     header { padding:10px 12px; }
@@ -287,7 +302,6 @@
     .products-section { padding:0 10px 60px; }
     .products-grid { grid-template-columns:repeat(2,1fr); gap:10px; }
     .product-img-wrap { height:145px; }
-    .product-emoji { font-size:3.6rem; }
     .product-info { padding:11px 12px 13px; }
     .product-name { font-size:0.88rem; }
     .product-desc { font-size:0.74rem; margin-bottom:8px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
@@ -295,11 +309,6 @@
     .buy-btn { padding:7px 11px; font-size:0.76rem; }
     .modal { padding:18px 14px 22px; border-radius:20px; max-height:95vh; }
     .form-row { grid-template-columns:1fr; }
-    .payment-methods { gap:7px; }
-    .payment-card { padding:10px 8px; }
-    .payment-icon { font-size:1.45rem; }
-    .payment-name { font-size:0.72rem; }
-    .payment-desc { font-size:0.6rem; }
     .soon-box { padding:40px 22px; }
     .soon-ring { width:120px; height:120px; }
     .soon-emoji { font-size:3rem; }
@@ -350,8 +359,8 @@
     <div class="cart-drawer-header">
       <div class="cart-drawer-title">
         <div>
-          <h3>سلة الطلبات</h3>
-          <div class="cart-title-count" id="cartTitleCount">٠ طلبات</div>
+          <h3>سلة المشتريات</h3>
+          <div class="cart-title-count" id="cartTitleCount">٠ منتجات</div>
         </div>
       </div>
       <button class="cart-drawer-close" id="cartDrawerCloseBtn">✕</button>
@@ -367,8 +376,8 @@
         <div class="cart-total-row grand"><span>الإجمالي الكلي</span><span class="cart-total-amount" id="cartGrand">—</span></div>
       </div>
       <div class="cart-actions">
-        <button class="cart-clear-btn" onclick="clearCart()">🗑️ مسح الكل</button>
-        <button class="cart-shop-btn" onclick="closeCartDrawer()">🛍️ تسوق أكثر</button>
+        <button class="cart-clear-btn" onclick="clearCart()">🗑️ مسح السلة</button>
+        <button class="cart-shop-btn" onclick="startCheckout()">✦ إتمام الطلب</button>
       </div>
     </div>
   </div>
@@ -484,12 +493,12 @@
   </section>
 
   <div class="filters">
-    <button class="filter-pill active" onclick="filterProducts('all',this)">All</button>
-    <button class="filter-pill" onclick="filterProducts('fashion',this)">👗 Fashion</button>
-    <button class="filter-pill" onclick="filterProducts('accessories',this)">💍 Accessories</button>
-    <button class="filter-pill" onclick="filterProducts('tech',this)">📱 Tech</button>
-    <button class="filter-pill" onclick="filterProducts('beauty',this)">💄 Beauty</button>
-    <button class="filter-pill" onclick="filterProducts('home',this)">🏠 Home</button>
+    <!-- <button class="filter-pill active" onclick="filterProducts('all',this)">All</button> -->
+    <button class="filter-pill" onclick="filterProducts('fashion',this)"> Fashion</button>
+    <button class="filter-pill" onclick="filterProducts('accessories',this)"> Accessories</button>
+    <!-- <button class="filter-pill" onclick="filterProducts('tech',this)"> Tech</button> -->
+    <button class="filter-pill" onclick="filterProducts('beauty',this)"> Beauty</button>
+    <!-- <button class="filter-pill" onclick="filterProducts('home',this)">🏠 Home</button> -->
   </div>
 
   <section class="products-section">
@@ -499,37 +508,22 @@
   <footer>جميع الحقوق محفوظة &copy; 2025 &mdash; <span>MANO</span> &mdash; صُنع بـ ♥ لكم</footer>
 </div>
 
-<!-- ORDER MODAL -->
+<!-- CHECKOUT MODAL -->
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal" id="modal">
     <button class="modal-close" id="modalCloseBtn">✕</button>
-    <div class="modal-product-preview">
-      <span class="modal-product-emoji" id="modalEmoji"></span>
-      <div>
-        <div class="modal-product-name" id="modalProductName"></div>
-        <div class="modal-product-price" id="modalProductPrice"></div>
-      </div>
-    </div>
-    <h2 class="modal-title">أكملي طلبك</h2>
-    <p class="modal-subtitle">أدخلي بياناتك وسيصلك المنتج في أسرع وقت ✦</p>
 
-    <div class="product-gallery" id="productGallery">
-      <div class="gallery-thumb" onclick="openLightbox(0)">
-        <img id="galleryImg1" src="" alt="صورة 1"><div class="gallery-zoom"><span>🔍</span></div>
-      </div>
-      <div class="gallery-thumb" onclick="openLightbox(1)">
-        <img id="galleryImg2" src="" alt="صورة 2"><div class="gallery-zoom"><span>🔍</span></div>
-      </div>
-      <div class="gallery-thumb" onclick="openLightbox(2)">
-        <img id="galleryImg3" src="" alt="صورة 3"><div class="gallery-zoom"><span>🔍</span></div>
-      </div>
-    </div>
+    <h2 class="modal-title">أكملي طلبك</h2>
+    <p class="modal-subtitle">اختاري منتجاتك أولاً، ثم أدخلي بيانات الشحن مرة واحدة فقط ✦</p>
+
+    <!-- ملخص كل المنتجات الموجودة في السلة -->
+    <div class="checkout-cart-summary" id="checkoutCartSummary"></div>
 
     <div class="form-grid">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">الاسم الكامل</label>
-          <input class="form-input" type="text" id="fullName" placeholder=" مانو">
+          <input class="form-input" type="text" id="fullName" placeholder="مانو">
         </div>
         <div class="form-group">
           <label class="form-label">رقم الموبايل</label>
@@ -557,60 +551,19 @@
       </div>
     </div>
 
-    <hr class="divider">
-
-    <div class="payment-section">
-      <span class="payment-label">طريقة الدفع</span>
-      <div class="payment-methods">
-        <div class="payment-card" onclick="selectPayment('visa',this)">
-          <div class="payment-icon">💳</div>
-          <div class="payment-name">فيزا / ماستركارد</div>
-          <div class="payment-desc">دفع آمن بالبطاقة</div>
-        </div>
-        <div class="payment-card" onclick="selectPayment('wallet',this)">
-          <div class="payment-icon">📱</div>
-          <div class="payment-name">المحفظة الإلكترونية</div>
-          <div class="payment-desc">فودافون / اتصالات / أورنج</div>
-        </div>
-      </div>
-      <div class="visa-fields" id="visaFields" style="display:none">
-        <div class="form-group">
-          <label class="form-label">رقم البطاقة</label>
-          <input class="form-input" type="text" id="cardNum" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" dir="ltr" oninput="formatCard(this)">
-        </div>
-        <div class="visa-row">
-          <div class="form-group">
-            <label class="form-label">تاريخ الانتهاء</label>
-            <input class="form-input" type="text" id="expiry" placeholder="MM/YY" maxlength="5" dir="ltr" oninput="formatExpiry(this)">
-          </div>
-          <div class="form-group">
-            <label class="form-label">CVV</label>
-            <input class="form-input" type="password" id="cvv" placeholder="•••" maxlength="3" dir="ltr">
-          </div>
-        </div>
-      </div>
-      <div class="visa-fields" id="walletFields" style="display:none">
-        <div class="form-group">
-          <label class="form-label">رقم المحفظة</label>
-          <input class="form-input" type="tel" id="walletNum" placeholder="01XXXXXXXXX" dir="ltr">
-        </div>
-        <div class="form-group">
-          <label class="form-label">نوع المحفظة</label>
-          <select class="form-select" id="walletType">
-            <option>فودافون كاش</option><option>اتصالات كاش</option>
-            <option>أورنج كاش</option><option>We Pay</option><option>إنستاباي</option>
-          </select>
-        </div>
-      </div>
-    </div>
+    <!-- بيانات العميل يتم حفظها محلياً للطلب القادم -->
+    <label class="remember-customer">
+      <input type="checkbox" id="rememberCustomer" checked>
+      <span>حفظ بياناتي للطلب القادم</span>
+    </label>
 
     <hr class="divider">
     <div class="order-summary">
-      <div class="summary-row"><span>سعر المنتج</span><span id="summaryPrice"></span></div>
-      <div class="summary-row"><span>رسوم التوصيل</span><span id="summaryDeliveryLabel">50 جنيه</span></div>
-      <div class="summary-row total"><span>الإجمالي</span><span id="summaryTotal"></span></div>
+      <div class="summary-row"><span>إجمالي المنتجات</span><span id="summaryPrice">0 جنيه</span></div>
+      <div class="summary-row"><span>رسوم التوصيل</span><span id="summaryDeliveryLabel">35 جنيه</span></div>
+      <div class="summary-row total"><span>الإجمالي</span><span id="summaryTotal">0 جنيه</span></div>
     </div>
-    <button class="submit-btn" onclick="submitOrder()">✦ تأكيدي الطلب الآن ✦</button>
+    <button class="submit-btn" onclick="submitOrder()">✦ تأكيد الطلب الآن ✦</button>
   </div>
 </div>
 
@@ -651,78 +604,99 @@
    DATA
 ═══════════════════════════════════════ */
 const products = [
-  {id:1,name:'عطر مانو الفاخر',cat:'beauty',emoji:'🌸',price:850,badge:'الأكثر مبيعاً',desc:'عطر شرقي فاخر بنفحات العود والمسك يدوم طوال اليوم',imgs:['https://images.unsplash.com/photo-1541643600914-78b084683702?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=500&h=500&fit=crop']},
-  {id:2,name:'ساعة كلاسيك',cat:'accessories',emoji:'⌚',price:2200,badge:'جديد',desc:'ساعة بتصميم عصري أنيق بسوار جلد إيطالي أصلي',imgs:['https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1549482199-bc1ca6f58502?w=500&h=500&fit=crop']},
-  {id:3,name:'حقيبة يد نسائية',cat:'fashion',emoji:'👜',price:1350,badge:'حصري',desc:'حقيبة جلد طبيعي فاخرة بتصميم راقٍ ومتعدد الاستخدامات',imgs:['https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1575032617751-6ddec2089882?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500&h=500&fit=crop']},
-  {id:4,name:'سماعات لاسلكية',cat:'tech',emoji:'🎧',price:1800,badge:'خصم 25%',desc:'جودة صوت استثنائية مع إلغاء الضوضاء وبطارية 30 ساعة',imgs:['https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1577174881658-0f30ed549adc?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500&h=500&fit=crop']},
-  {id:5,name:'كريم العناية الذهبي',cat:'beauty',emoji:'✨',price:480,badge:'',desc:'كريم مرطب فاخر بخلاصة الذهب والكولاجن لبشرة مشرقة',imgs:['https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1526758097130-bab247274f58?w=500&h=500&fit=crop']},
-  {id:6,name:'بدلة رجالية كلاسيك',cat:'fashion',emoji:'👔',price:3200,badge:'فاخر',desc:'بدلة صوف إيطالي مخصصة بخيوط قماش ممتاز وتفصيل احترافي',imgs:['https://images.unsplash.com/photo-1594938298603-c8148c4b4357?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=500&h=500&fit=crop']},
-  {id:7,name:'إطار نظارة شمسية',cat:'accessories',emoji:'🕶️',price:950,badge:'',desc:'نظارة بعدسات UV400 مع إطار استانلس ستيل خفيف الوزن',imgs:['https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1508296695146-257a814070b4?w=500&h=500&fit=crop']},
-  {id:8,name:'هاتف ذكي برو',cat:'tech',emoji:'📱',price:15000,badge:'أحدث إصدار',desc:'كاميرا 200 ميجابكسل، معالج أسرع، شاشة AMOLED مذهلة',imgs:['https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=500&h=500&fit=crop']},
-  {id:9,name:'مجموعة مكياج',cat:'beauty',emoji:'💄',price:720,badge:'طقم',desc:'مجموعة متكاملة من الألوان الرائجة لإطلالة مثالية طوال اليوم',imgs:['https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&h=500&fit=crop']},
-  {id:10,name:'وسادة ذكية',cat:'home',emoji:'🛋️',price:580,badge:'',desc:'وسادة بذاكرة شكل تتكيف مع طبيعة نومك لراحة مثالية',imgs:['https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&h=500&fit=crop']},
-  {id:11,name:'ديفيوزر العطور',cat:'home',emoji:'🕯️',price:380,badge:'',desc:'جهاز ناشر العطور الأوتوماتيكي مع 10 روائح طبيعية مختلفة',imgs:['https://images.unsplash.com/photo-1608181831688-8b4d25cf2e06?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1600428877878-1a0fd85beda8?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1603006905003-be475563bc59?w=500&h=500&fit=crop']},
-  {id:12,name:'حزام جلد فاخر',cat:'accessories',emoji:'👒',price:420,badge:'',desc:'حزام جلد طبيعي بإبزيم ذهبي أنيق مناسب لجميع المناسبات',imgs:['https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500&h=500&fit=crop']},
+  // {id:2,name:'ساعة كلاسيك',cat:'accessories',emoji:'Soon',price:2200,badge:'جديد',desc:'ساعة بتصميم عصري أنيق بسوار جلد إيطالي أصلي',imgs:['https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1549482199-bc1ca6f58502?w=500&h=500&fit=crop']},
+  {id:1,name:'بجامه حماله',cat:'fashion',emoji:'🛍️',price:160,badge:'خصم 25%',desc:'خامه فيكتوريا ملمس قطني تلبيس من 75 ل 95 كيلو',imgs:['code307.png.jpg','code305.png.jpg','code306.png.jpg']},
+  {id:2,name:'شورت أطفالي',cat:'fashion',emoji:'🛍️',price:160,badge:'خصم 25%',desc:'خامه فيكتوريا ملمس قطني تلبيس من 75 ل 95 كيلو',imgs:['code503.png.jpg','code501.png.jpg','code502.png.jpg']},
+  {id:3,name:'بدلة رجالية كلاسيك',cat:'fashion',emoji:'🛍️',price:3200,badge:'فاخر',desc:'بدلة صوف إيطالي مخصصة بخيوط قماش ممتاز وتفصيل احترافي',imgs:['code512.png.jpg','code511.png.jpg','code510.png.jpg']},
+  {id:4,name:'بدي حريمي',cat:'fashion',emoji:'🛍️',price:3200,badge:'فاخر',desc:'بدلة صوف إيطالي مخصصة بخيوط قماش ممتاز وتفصيل احترافي',imgs:['code522.png.jpg','code521.png.jpg','code520.png.jpg']},
+  {id:5,name:'بجامه حريمي',cat:'fashion',price:210,badge:'',desc:'خامة لامبورجيني مستورد ملمس قطن تلبيس 75 ل 100',imgs:['code403.png.jpg','code402.png.jpg','code401.png.jpg']},
+  {id:6,name:'بجامه حريمي',cat:'fashion',price:210,badge:'',desc:'خامة لامبورجيني مستورد ملمس قطن تلبيس 75 ل 100',imgs:['code601.png.jpg','code601.png.jpg','code601.png.jpg']},
+  {id:7,name:'بجامه حريمي',cat:'fashion',price:210,badge:'',desc:'خامة لامبورجيني مستورد ملمس قطن تلبيس 75 ل 100',imgs:['code801.png.jpg','code601.png.jpg','code601.png.jpg']},
+  {id:8,name:'بجامه حريمي',cat:'fashion',price:210,badge:'',desc:'خامة لامبورجيني مستورد ملمس قطن تلبيس 75 ل 100',imgs:['code531.png.jpg','code601.png.jpg','code601.png.jpg']},
+  {id:9,name:'بجامه حريمي',cat:'fashion',price:210,badge:'',desc:'خامة لامبورجيني مستورد ملمس قطن تلبيس 75 ل 100',imgs:['code811.png.jpg','code601.png.jpg','code601.png.jpg']},
+  {id:10,name:'بجامه حريمي',cat:'fashion',price:210,badge:'',desc:'خامة لامبورجيني مستورد ملمس قطن تلبيس 75 ل 100',imgs:['code540.png.jpg','code601.png.jpg','code601.png.jpg']},
+
+  
+ // {id:7,name:'إطار نظارة شمسية',cat:'accessories',emoji:'🕶️',price:950,badge:'',desc:'نظارة بعدسات UV400 مع إطار استانلس ستيل خفيف الوزن',imgs:['https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1508296695146-257a814070b4?w=500&h=500&fit=crop']},
+  // {id:8,name:'هاتف ذكي برو',cat:'tech',emoji:'📱',price:15000,badge:'أحدث إصدار',desc:'كاميرا 200 ميجابكسل، معالج أسرع، شاشة AMOLED مذهلة',imgs:['https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500&h=50０&fit=crop','https://images.unsplash.com/photo-1574944985０７０-8f3ebc6b７９d２?w=５００&h=５００&fit=crop']},
+  // {id:9,name:'مجموعة مكياج',cat:'beauty',emoji:'💄',price:７２０,badge:'طقم',desc:'مجموعة متكاملة من الألوان الرائجة لإطلالة مثالية طوال اليوم',imgs:['https://images.unsplash.com/photo-１５１２２０７７３６８９０-６ffed８a８４e８d?w=５００&h=５００&fit=crop','https://images.unsplash.com/photo-１５２２３３５７８９２０３-aabd１fc５４bc９?w=５００&h=５００&fit=crop','https://images.unsplash.com/photo-１４８７４１２９４７１４７-５cebf１００ffc２?w=５００&h=５００&fit=crop']},
+  // {id:１０,name:'وسادة ذكية',cat:'home',emoji:'🛋️',price:５８０,badge:'',desc:'وسادة بذاكرة شكل تتكيف مع طبيعة نومك لراحة مثالية',imgs:['https://images.unsplash.com/photo-１５５５₀４１４６９-a５８６c６１ea９bc?w=５００&h=５₀₀&fit=crop','https://images.unsplash.com/photo-１４８４１₀１４₀３６３３-៥６２f８９１dc８９a?w=５₀₀&h=５₀₀&fit=crop','https://images.unsplash.com/photo-１៥４₀៥１８６１４８４６-７eded４３３c４５７?w=５₀₀&h=５₀₀&fit=crop']},
+  // {id:１１,name:'ديفيوزر العطور',cat:'home',emoji:'🕯️',price:３８０,badge:'',desc:'جهاز ناشر العطور الأوتوماتيكي مع １٠ روائح طبيعية مختلفة',imgs:['https://images.unsplash.com/photo-１٦٠٨١٨١٨٣١٦٨٨-٨b۴d۲۵cf۲e۰۶?w=۵۰۰&h=۵۰۰&fit=crop','https://images.unsplash.com/photo-۱٦٠٠٤٢٨٨٧٧٨ـ₁a⁰fd⁸⁵beda⁸?w=⁵⁰⁰&
+  // {id:12,name:'حزام جلد فاخر',cat:'accessories',emoji:'👒',price:420,badge:'',desc:'حزام جلد طبيعي بإبزيم ذهبي أنيق مناسب لجميع المناسبات',imgs:['https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500&h=500&fit=crop','https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500&h=500&fit=crop']},
+
 ];
 
-const soonCats = ['tech','beauty','home'];
+const soonCats = ['tech','beauty','home','accessories'];
 const soonCatInfo = {
   tech:{emoji:'📱',name:'التقنية والإلكترونيات'},
   beauty:{emoji:'💄',name:'الجمال والعناية'},
-  home:{emoji:'🏠',name:'المنزل والديكور'}
+  home:{emoji:'🏠',name:'المنزل والديكور'},
+  accessories:{emoji:'💍',name:'accessories'}
 };
 
 /* ═══════════════════════════════════════
-   CART STATE — persisted in localStorage
+   CART STATE — المنتجات فقط، بدون بيانات عميل
 ═══════════════════════════════════════ */
-const CART_KEY = 'mano_cart_v1';
+const CART_KEY = 'mano_cart_v2';
+const CUSTOMER_KEY = 'mano_customer_v1';
+const SHIPPING_COST = 40;
 
 function loadCart() {
   try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
   catch { return []; }
 }
-function saveCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+function saveCart(cartData) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cartData));
 }
-
 let cart = loadCart();
+
+// تحويل بيانات السلة القديمة إلى الشكل الجديد إذا كانت موجودة
+cart = cart.map(item => ({
+  id:item.id, name:item.name, cat:item.cat, emoji:item.emoji || '🛍️',
+  price:Number(item.price) || 0, badge:item.badge || '',
+  quantity:Number(item.quantity) > 0 ? Number(item.quantity) : 1
+}));
+saveCart(cart);
 
 function updateCartBadge(animate) {
   const badge = document.getElementById('cartCount');
-  badge.textContent = cart.length;
+  const count = cart.reduce((sum,item)=>sum + item.quantity,0);
+  badge.textContent = count;
   if (animate) {
-    badge.classList.remove('pop');
-    void badge.offsetWidth;
-    badge.classList.add('pop');
+    badge.classList.remove('pop'); void badge.offsetWidth; badge.classList.add('pop');
     setTimeout(() => badge.classList.remove('pop'), 450);
   }
 }
 
-/* ═══════════════════════════════════════
-   CART DRAWER
-═══════════════════════════════════════ */
-function openCartDrawer() {
+function addToCart(productId) {
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
+
+  const existing = cart.find(item => item.id === productId);
+  if (existing) existing.quantity += 1;
+  else cart.push({
+    id:product.id, name:product.name, cat:product.cat, emoji:product.emoji || '🛍️',
+    price:product.price, badge:product.badge || '', quantity:1
+  });
+
+  saveCart(cart);
+  updateCartBadge(true);
   renderCartDrawer();
-  document.getElementById('cartDrawerOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeCartDrawer() {
-  document.getElementById('cartDrawerOverlay').classList.remove('open');
-  document.body.style.overflow = '';
+  showToast(`🛍️ تمت إضافة ${product.name} للسلة`);
 }
 
-function toArabicNumerals(n) {
-  return n.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+function changeCartQuantity(productId, delta) {
+  const item = cart.find(i => i.id === productId);
+  if (!item) return;
+  item.quantity += delta;
+  if (item.quantity <= 0) cart = cart.filter(i => i.id !== productId);
+  saveCart(cart);
+  updateCartBadge(false);
+  renderCartDrawer();
 }
 
-function formatDate(ts) {
-  const d = new Date(ts);
-  const months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-  return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()} — ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
-}
-
-function deleteCartItem(orderId) {
-  cart = cart.filter(i => i.orderId !== orderId);
+function deleteCartItem(productId) {
+  cart = cart.filter(i => i.id !== productId);
   saveCart(cart);
   updateCartBadge(false);
   renderCartDrawer();
@@ -737,14 +711,35 @@ function clearCart() {
   showToast('🗑️ تم مسح السلة');
 }
 
+function openCartDrawer() {
+  renderCartDrawer();
+  document.getElementById('cartDrawerOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCartDrawer() {
+  document.getElementById('cartDrawerOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function toArabicNumerals(n) { return n.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]); }
+
+function calculateSubtotal() {
+  return cart.reduce((sum,item)=>sum + (item.price * item.quantity),0);
+}
+
+// الشحن يحسب مرة واحدة على السلة كلها
+function calculateShipping() {
+  return cart.length ? SHIPPING_COST : 0;
+}
+
 function renderCartDrawer() {
   const body = document.getElementById('cartBody');
   const footer = document.getElementById('cartFooter');
   const titleCount = document.getElementById('cartTitleCount');
+  const itemCount = cart.reduce((sum,item)=>sum + item.quantity,0);
 
-  titleCount.textContent = cart.length
-    ? toArabicNumerals(cart.length) + ' ' + (cart.length === 1 ? 'طلب' : 'طلبات')
-    : '٠ طلبات';
+  titleCount.textContent = itemCount
+    ? toArabicNumerals(itemCount) + ' ' + (itemCount === 1 ? 'منتج' : 'منتجات')
+    : '٠ منتجات';
 
   if (!cart.length) {
     footer.style.display = 'none';
@@ -752,26 +747,22 @@ function renderCartDrawer() {
       <div class="cart-empty">
         <span class="cart-empty-emoji">🛍️</span>
         <div class="cart-empty-title">السلة فارغة</div>
-        <div class="cart-empty-sub">لم تقومي بأي طلب بعد<br>اختاري منتجاتك المفضلة وأضيفيها هنا ✦</div>
+        <div class="cart-empty-sub">اختاري منتجاتك المفضلة وأضيفيها هنا ✦</div>
       </div>`;
     return;
   }
 
   footer.style.display = 'block';
-
-  // totals — delivery charged once per unique customer (phone number)
-  const subtotal = cart.reduce((s, i) => s + i.price, 0);
-  const uniquePhones = new Set(cart.map(i => i.phone)).size;
-  const delivery = uniquePhones * 50;
+  const subtotal = calculateSubtotal();
+  const delivery = calculateShipping();
   const grand = subtotal + delivery;
+
   document.getElementById('cartSubtotal').textContent = subtotal.toLocaleString() + ' جنيه';
-  document.getElementById('cartDelivery').textContent = delivery.toLocaleString() + ' جنيه' + (uniquePhones > 1 ? ` (${uniquePhones} عملاء)` : '');
+  document.getElementById('cartDelivery').textContent = delivery.toLocaleString() + ' جنيه';
   document.getElementById('cartGrand').textContent = grand.toLocaleString() + ' جنيه';
 
-  const payIcons = { visa: '💳 فيزا / ماستركارد', wallet: '📱 محفظة إلكترونية' };
-
-  const itemsHTML = cart.map((item, idx) => `
-    <div class="cart-item" style="animation-delay:${idx * 0.07}s">
+  const itemsHTML = cart.map((item,idx)=>`
+    <div class="cart-item" style="animation-delay:${idx * .07}s">
       <div class="cart-item-emoji-wrap">${item.emoji}</div>
       <div class="cart-item-info">
         <div class="cart-item-cat">${getCatName(item.cat)}</div>
@@ -780,22 +771,21 @@ function renderCartDrawer() {
           ${item.badge ? `<span class="cart-item-badge">${item.badge}</span>` : ''}
           <span class="cart-item-price">${item.price.toLocaleString()} جنيه</span>
         </div>
-        <div class="cart-item-customer">
-          <strong>${item.customerName}</strong> &nbsp;·&nbsp; ${item.phone}<br>
-          📍 ${item.location} — ${item.address}
+        <div class="cart-item-controls">
+          <button class="cart-qty-btn" onclick="changeCartQuantity(${item.id},-1)">−</button>
+          <span class="cart-qty">${item.quantity}</span>
+          <button class="cart-qty-btn" onclick="changeCartQuantity(${item.id},1)">+</button>
+          <span style="font-size:.7rem;color:rgba(255,255,255,.35)">× ${item.quantity}</span>
         </div>
-        <div class="cart-item-payment">${payIcons[item.paymentType] || item.paymentType}</div>
-        <div class="cart-item-order-id">${item.orderId}</div>
-        <div class="cart-item-date">🕐 ${formatDate(item.timestamp)}</div>
       </div>
-      <button class="cart-item-del" onclick="deleteCartItem('${item.orderId}')" title="حذف الطلب">✕</button>
-    </div>
-  `).join('');
+      <div style="font-weight:800;color:var(--blush);white-space:nowrap">${(item.price*item.quantity).toLocaleString()} جنيه</div>
+      <button class="cart-item-del" onclick="deleteCartItem(${item.id})" title="حذف المنتج">✕</button>
+    </div>`).join('');
 
-  body.innerHTML = `<div class="cart-items-list">${itemsHTML}</div>`;
+  body.innerHTML = `<div class="cart-items-list">${itemsHTML}</div><div class="cart-checkout-note">رسوم التوصيل تُحسب مرة واحدة على السلة بالكامل ✦</div>`;
 }
 
-document.getElementById('cartDrawerOverlay').addEventListener('click', function(e) {
+document.getElementById('cartDrawerOverlay').addEventListener('click', function(e){
   if (e.target === this) closeCartDrawer();
 });
 document.getElementById('cartDrawerCloseBtn').addEventListener('click', closeCartDrawer);
@@ -869,7 +859,7 @@ document.getElementById('lightboxCloseBtn').addEventListener('click', closeLight
 /* ═══════════════════════════════════════
    RENDER PRODUCTS
 ═══════════════════════════════════════ */
-function getCatName(cat) { return {fashion:'أزياء',accessories:'إكسسوار',tech:'تقنية',beauty:'جمال',home:'منزل'}[cat]||cat; }
+ function getCatName(cat) { return {fashion:'أزياء',accessories:'إكسسوار',tech:'تقنية',beauty:'جمال',home:'منزل'}[cat]||cat; }
 
 function renderProducts(filter='all') {
   const grid = document.getElementById('productsGrid');
@@ -879,9 +869,13 @@ function renderProducts(filter='all') {
     const card = document.createElement('div');
     card.className = 'product-card';
     card.style.animationDelay = i * .07 + 's';
+    const thumb = (p.imgs && p.imgs[0]) ? p.imgs[0] : '';
     card.innerHTML = `
       ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
-      <div class="product-img-wrap"><div class="product-glow"></div><div class="product-emoji">${p.emoji}</div></div>
+      <div class="product-img-wrap">
+        <img src="${thumb}" alt="${p.name}" loading="lazy">
+        <div class="product-img-overlay"></div>
+      </div>
       <div class="product-info">
         <div class="product-category">${getCatName(p.cat)}</div>
         <div class="product-name">${p.name}</div>
@@ -902,142 +896,136 @@ function filterProducts(cat, btn) {
   renderProducts(cat);
 }
 
+// زر المنتج أصبح يضيف للسلة فقط، ولا يطلب بيانات العميل
 function handleBuy(id, e) {
   e.stopPropagation();
   const p = products.find(x=>x.id===id);
   if (!p) return;
   if (soonCats.includes(p.cat)) { showSoon(p.cat); return; }
-  openModal(id);
+  addToCart(id);
 }
 
 /* ═══════════════════════════════════════
-   ORDER MODAL
+   CHECKOUT
 ═══════════════════════════════════════ */
-let selectedProduct = null, selectedPayment = null;
+function loadCustomerData() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(CUSTOMER_KEY));
+    if (!saved) return;
+    document.getElementById('fullName').value = saved.name || '';
+    document.getElementById('phone').value = saved.phone || '';
+    document.getElementById('address').value = saved.address || '';
+    document.getElementById('location').value = saved.location || '';
+  } catch {}
+}
 
-function openModal(id) {
-  selectedProduct = products.find(p=>p.id===id);
-  if (!selectedProduct) return;
-  document.getElementById('modalEmoji').textContent = selectedProduct.emoji;
-  document.getElementById('modalProductName').textContent = selectedProduct.name;
-  document.getElementById('modalProductPrice').textContent = selectedProduct.price.toLocaleString() + ' جنيه';
-  // Delivery shown as 50 by default; recalculated on submit based on actual phone entered
-  document.getElementById('summaryPrice').textContent = selectedProduct.price.toLocaleString() + ' جنيه';
-  document.getElementById('summaryTotal').textContent = (selectedProduct.price + 50).toLocaleString() + ' جنيه';
-  lightboxImages = selectedProduct.imgs || [];
-  const imgs = selectedProduct.imgs || ['','',''];
-  document.getElementById('galleryImg1').src = imgs[0] || '';
-  document.getElementById('galleryImg2').src = imgs[1] || '';
-  document.getElementById('galleryImg3').src = imgs[2] || '';
-  ['fullName','phone','address'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('location').value = '';
-  document.getElementById('visaFields').style.display = 'none';
-  document.getElementById('walletFields').style.display = 'none';
-  document.querySelectorAll('.payment-card').forEach(c=>c.classList.remove('selected'));
-  selectedPayment = null;
-  // Reset delivery label
-  document.getElementById('summaryDeliveryLabel').textContent = '50 جنيه';
-  // Live delivery recalc when phone changes
-  const phoneEl = document.getElementById('phone');
-  phoneEl.oninput = () => recalcModalDelivery(phoneEl.value.trim());
+function saveCustomerData() {
+  const data = {
+    name:document.getElementById('fullName').value.trim(),
+    phone:document.getElementById('phone').value.trim(),
+    address:document.getElementById('address').value.trim(),
+    location:document.getElementById('location').value
+  };
+  localStorage.setItem(CUSTOMER_KEY, JSON.stringify(data));
+}
+
+function renderCheckoutSummary() {
+  const box = document.getElementById('checkoutCartSummary');
+  const subtotal = calculateSubtotal();
+  const shipping = calculateShipping();
+
+  box.innerHTML = cart.map(item=>`
+    <div class="checkout-cart-item">
+      <span class="checkout-cart-item-name">${item.emoji} ${item.name}</span>
+      <span class="checkout-cart-item-qty">× ${item.quantity}</span>
+      <span class="checkout-cart-item-total">${(item.price*item.quantity).toLocaleString()} جنيه</span>
+    </div>`).join('');
+
+  document.getElementById('summaryPrice').textContent = subtotal.toLocaleString() + ' جنيه';
+  document.getElementById('summaryDeliveryLabel').textContent = shipping.toLocaleString() + ' جنيه';
+  document.getElementById('summaryTotal').textContent = (subtotal + shipping).toLocaleString() + ' جنيه';
+}
+
+function startCheckout() {
+  if (!cart.length) { showToast('🛍️ السلة فارغة'); return; }
+  closeCartDrawer();
+  renderCheckoutSummary();
+  loadCustomerData();
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
-  setTimeout(()=>document.getElementById('modal').scrollTop=0, 50);
+  setTimeout(()=>document.getElementById('modal').scrollTop=0,35);
 }
-function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); document.body.style.overflow=''; }
-document.getElementById('modalOverlay').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
-document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
 
-function selectPayment(type, el) {
-  document.querySelectorAll('.payment-card').forEach(c=>c.classList.remove('selected'));
-  el.classList.add('selected'); selectedPayment = type;
-  document.getElementById('visaFields').style.display = type==='visa' ? 'grid' : 'none';
-  document.getElementById('walletFields').style.display = type==='wallet' ? 'grid' : 'none';
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow='';
 }
-function formatCard(input) { let v=input.value.replace(/\D/g,'').substring(0,16); input.value=v.replace(/(.{4})/g,'$1 ').trim(); }
-function formatExpiry(input) { let v=input.value.replace(/\D/g,'').substring(0,4); if(v.length>=2) v=v.substring(0,2)+'/'+v.substring(2); input.value=v; }
-
-/* ═══════════════════════════════════════
-   SUBMIT ORDER — now adds to cart
-═══════════════════════════════════════ */
-
-// Recalc delivery in modal summary based on entered phone
-function recalcModalDelivery(phone) {
-  if (!selectedProduct) return;
-  const alreadyOrdered = cart.some(i => i.phone === phone);
-  const deliveryCost = alreadyOrdered ? 0 : 50;
-  const deliveryLabel = document.getElementById('summaryDeliveryLabel');
-  if (deliveryLabel) {
-    deliveryLabel.textContent = alreadyOrdered ? '0 جنيه 🎁 مجاني' : '50 جنيه';
-  }
-  document.getElementById('summaryTotal').textContent =
-    (selectedProduct.price + deliveryCost).toLocaleString() + ' جنيه';
-}
+document.getElementById('modalOverlay').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
+document.getElementById('modalCloseBtn').addEventListener('click',closeModal);
 
 function submitOrder() {
+  if (!cart.length) { showToast('🛍️ السلة فارغة'); closeModal(); return; }
+
   const name = document.getElementById('fullName').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const address = document.getElementById('address').value.trim();
   const location = document.getElementById('location').value;
+
   if (!name) { showToast('⚠️ من فضلك أدخلي اسمك الكامل'); return; }
   if (!phone || phone.length < 10) { showToast('⚠️ رقم الموبايل غير صحيح'); return; }
   if (!address) { showToast('⚠️ من فضلك أدخلي عنوانك'); return; }
   if (!location) { showToast('⚠️ من فضلك اختاري محافظتك'); return; }
-  if (!selectedPayment) { showToast('⚠️ من فضلك اختاري طريقة الدفع'); return; }
-  if (selectedPayment === 'visa') {
-    const card = document.getElementById('cardNum').value.replace(/\s/g,'');
-    const expiry = document.getElementById('expiry').value;
-    const cvv = document.getElementById('cvv').value;
-    if (card.length < 16) { showToast('⚠️ رقم البطاقة غير صحيح'); return; }
-    if (expiry.length < 5) { showToast('⚠️ تاريخ انتهاء البطاقة غير صحيح'); return; }
-    if (cvv.length < 3) { showToast('⚠️ CVV غير صحيح'); return; }
-  }
-  if (selectedPayment === 'wallet') {
-    const wNum = document.getElementById('walletNum').value.trim();
-    if (!wNum || wNum.length < 10) { showToast('⚠️ رقم المحفظة غير صحيح'); return; }
-  }
 
+  const subtotal = calculateSubtotal();
+  const deliveryCost = calculateShipping();
+  const total = subtotal + deliveryCost;
   const orderId = 'MNO-' + Date.now().toString().slice(-6);
-  const payLabel = selectedPayment === 'visa' ? '💳 فيزا / ماستركارد' : '📱 محفظة إلكترونية';
 
-  // Delivery is free if customer already has an order in the cart
-  const alreadyOrdered = cart.some(i => i.phone === phone);
-  const deliveryCost = alreadyOrdered ? 0 : 50;
-  const deliveryNote = alreadyOrdered ? '0 جنيه (مجاني - طلب مكرر)' : '50 جنيه';
-  const total = (selectedProduct.price + deliveryCost).toLocaleString();
+  // حفظ بيانات العميل مرة واحدة، مع الاحتفاظ بها للطلبات القادمة
+  if (document.getElementById('rememberCustomer').checked) saveCustomerData();
 
-  // ── Add to persistent cart ──
-  const cartItem = {
+  // نسخة مستقلة من السلة داخل الطلب الواحد
+  const orderItems = cart.map(item=>({
+    id:item.id, name:item.name, price:item.price, quantity:item.quantity,
+    cat:item.cat, badge:item.badge
+  }));
+
+  const order = {
     orderId,
-    timestamp: Date.now(),
-    id: selectedProduct.id,
-    name: selectedProduct.name,
-    cat: selectedProduct.cat,
-    emoji: selectedProduct.emoji,
-    price: selectedProduct.price,
-    badge: selectedProduct.badge,
-    customerName: name,
-    phone,
-    address,
-    location,
-    paymentType: selectedPayment,
+    customer:{name,phone,address,location},
+    items:orderItems,
+    subtotal,
+    shipping:deliveryCost,
+    total,
+    createdAt:new Date().toISOString()
   };
-  cart.push(cartItem);
-  saveCart(cart);
-  updateCartBadge(true);
 
-  // WhatsApp message
-  const msg = `🌸 *طلب جديد من متجر MANO*\n━━━━━━━━━━━━━━━━━━\n📦 *المنتج:* ${selectedProduct.emoji} ${selectedProduct.name}\n💰 *سعر المنتج:* ${selectedProduct.price.toLocaleString()} جنيه\n🚚 *مصاريف الشحن:* ${deliveryNote}\n💰 *الإجمالي:* ${total} جنيه\n━━━━━━━━━━━━━━━━━━\n👤 *الاسم:* ${name}\n📞 *الموبايل:* ${phone}\n📍 *المحافظة:* ${location}\n🏠 *العنوان:* ${address}\n━━━━━━━━━━━━━━━━━━\n💳 *طريقة الدفع:* ${payLabel}\n🔖 *رقم الطلب:* ${orderId}\n━━━━━━━━━━━━━━━━━━`;
+  // مؤقتاً: حفظ آخر طلب على الجهاز. في الإنتاج يجب إرساله إلى Backend.
+  localStorage.setItem('mano_last_order', JSON.stringify(order));
+
+  // رسالة واتساب تحتوي على كل منتجات السلة في Order واحد
+  const productsText = orderItems.map((item,index)=>
+    `${index+1}. ${item.name} × ${item.quantity} = ${(item.price*item.quantity).toLocaleString()} جنيه`
+  ).join('\n');
+
+  const msg = `🌸 *طلب جديد من متجر MANO*\n━━━━━━━━━━━━━━━━━━\n📦 *المنتجات:*\n${productsText}\n\n💰 *إجمالي المنتجات:* ${subtotal.toLocaleString()} جنيه\n🚚 *مصاريف الشحن:* ${deliveryCost.toLocaleString()} جنيه\n💰 *الإجمالي:* ${total.toLocaleString()} جنيه\n━━━━━━━━━━━━━━━━━━\n👤 *الاسم:* ${name}\n📞 *الموبايل:* ${phone}\n📍 *المحافظة:* ${location}\n🏠 *العنوان:* ${address}\n━━━━━━━━━━━━━━━━━━\n🔖 *رقم الطلب:* ${orderId}\n━━━━━━━━━━━━━━━━━━`;
+
   const waURL = `https://wa.me/201222183695?text=${encodeURIComponent(msg)}`;
+
+  // مهم: نمسح السلة بعد إنشاء Order واحد، لكن لا نمسح customerData
+  cart = [];
+  saveCart(cart);
+  updateCartBadge(false);
+  renderCartDrawer();
 
   closeModal();
   document.getElementById('orderIdDisplay').textContent = 'رقم طلبك: ' + orderId;
-  setTimeout(() => {
+  setTimeout(()=>{
     document.getElementById('productsPage').classList.remove('active');
     document.getElementById('successPage').classList.add('active');
-    window.scrollTo(0, 0);
-    window.open(waURL, '_blank');
-  }, 300);
+    window.scrollTo(0,0);
+    window.open(waURL,'_blank');
+  },300);
 }
 
 function goBack() {
